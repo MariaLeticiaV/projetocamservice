@@ -1,0 +1,20 @@
+/* Define os aliases para os sensores no controlador GPIO principal */
+&gpio0 {
+	status = "okay";
+
+	s1_sensor: s1_sensor {
+		gpios = <5 0>; /* Pino 5 do GPIO 0 */
+		label = "S1 Sensor (GPIO 5)";
+	};
+	s2_sensor: s2_sensor {
+		gpios = <6 0>; /* Pino 6 do GPIO 0 */
+		label = "S2 Sensor (GPIO 6)";
+	};
+};
+
+/ {
+    aliases {
+        s1_sensor = &s1_sensor;
+        s2_sensor = &s2_sensor;
+    };
+};
