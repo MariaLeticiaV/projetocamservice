@@ -1,0 +1,35 @@
+menu "Radar System Configuration"
+
+config RADAR_SENSOR_DISTANCE_MM
+    int "Sensor Distance (mm)"
+    default 1000
+    help
+      Distance in millimeters between the two simulated magnetic sensors.
+
+config RADAR_SPEED_LIMIT_LIGHT_KMH
+    int "Light Vehicle Speed Limit (km/h)"
+    default 80
+    help
+      Speed limit for light vehicles (2 axles).
+
+config RADAR_SPEED_LIMIT_HEAVY_KMH
+    int "Heavy Vehicle Speed Limit (km/h)"
+    default 60
+    help
+      Speed limit for heavy vehicles (3+ axles).
+
+config RADAR_WARNING_THRESHOLD_PERCENT
+    int "Warning Threshold (%)"
+    range 50 100
+    default 90
+    help
+      Percentage of the speed limit that triggers the 'Yellow' warning display.
+
+config RADAR_CAMERA_FAILURE_RATE_PERCENT
+    int "Camera Failure Rate (%)"
+    range 0 100
+    default 10
+    help
+      Simulated failure rate for the LPR camera (invalid plate).
+
+endmenu
